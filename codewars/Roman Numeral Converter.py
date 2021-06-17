@@ -10,13 +10,12 @@ def solution(roman) :
         ('M', 1000, 7),
     ]
     valid = {
-        'IV' : 4
-        'IX' : 9
-        'XL' : 40
-        'CD' : 400
+        'IV' : 4,
+        'IX' : 9,
+        'XL' : 40,
+        'CD' : 400,
         'CM' : 900
     }
-    valid = {'IV':4, 'IX', 'XL', 'CD', 'CM'}
     result = 0
     newl = list(roman)
     for item in newl :
