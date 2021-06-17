@@ -19,12 +19,16 @@ def solution(roman) :
     }
     result = 0
     newl = list(roman)
-    for item in newl :
+    for (ind, item) in enumerate(newl) :
         valueofchar = nums.get(item)
         print(f'char is {item}')
         print(f'valueofchar is {valueofchar}')
         lastindex = len(newl) - 1
-        posofchar = newl.index(item)
+        posofchar = ind
+        if ind > 0 :
+            prev = newl[ind - 1]
+        if ind < (lastindex) :
+            nex = newl[ind + 1]
         print(f'posofchar is {posofchar}')
         if not posofchar == 0 :
             prevchar = posofchar-1
@@ -43,7 +47,7 @@ def solution(roman) :
             nextchar = None
             nextval = None
         if len(newl) == 1 : result = valueofchar
-        elif item + newl[nextchar] in valid :
+        elif not posofchar == lastindex and item + newl[nextchar] in valid :
             print('char and next are combo, adding')
             result += valid.get(item + newl[nextchar])
             print(f'current total is {result}')
@@ -57,7 +61,11 @@ def solution(roman) :
             #result += valueofchar
         #elif not posofchar == 0 and valueofchar > prevval : continue
         #elif posofchar == lastindex and valueofchar > prevval : continue
-        elif not nextval is None and valueofchar >= nextval :
+        elif posofchar != lastindex and valueofchar >= nextval :
+            print(f'posofchar is {posofchar}')
+            print(f'lastindex is {lastindex}')
+            print(f'valueofchar is {valueofchar}')
+            print(f'nextval is {nextval}')
             print('char is higher than nextchar, adding')
             result += valueofchar
             print(f'current total is {result}')
