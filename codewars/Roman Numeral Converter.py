@@ -1,14 +1,22 @@
 inp = input('')
 def solution(roman) :
-    nums = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000,
+    nums = [
+        ('I', 1, 1),
+        ('V', 5, 2),
+        ('X', 10, 3),
+        ('L', 50, 4),
+        ('C', 100, 5),
+        ('D', 500, 6),
+        ('M', 1000, 7),
+    ]
+    valid = {
+        'IV' : 4
+        'IX' : 9
+        'XL' : 40
+        'CD' : 400
+        'CM' : 900
     }
+    valid = {'IV':4, 'IX', 'XL', 'CD', 'CM'}
     result = 0
     newl = list(roman)
     for item in newl :
