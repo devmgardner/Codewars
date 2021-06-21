@@ -16,4 +16,3 @@ def rot13(message):
             letrs.append(alph[ind])
     letrs = str(''.join(letrs))
     return letrs
-print(rot13(input('')))
