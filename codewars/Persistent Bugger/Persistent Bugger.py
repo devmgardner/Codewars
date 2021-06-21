@@ -4,7 +4,6 @@ def persistence(n):
     numl = list(str(n))
     if len(numl) == 1 : return 0
     total = 1
-    print(f')
     for item in numl :
         total *= int(item)
         print(f'current total is {total}')
