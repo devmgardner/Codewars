@@ -2,6 +2,11 @@
 #number each function/thing that happens so debugging is easier
 #all variable names should be long and descriptive until program works, then variable names can be shortened
 #keep everything as spaced out as possible to be easier to read
+#6afe16afbaf0e10a is current test string
+########https://base64.guru/converter/encode/hex;
+#
+#above is place to easily test program
+#
 hexalph = """!"#$%&'()*+,-./0123456789:'<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"""
 fname = 'testoutput.txt'
 fhand = open(fname, 'w')
