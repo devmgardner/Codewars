@@ -1,0 +1,16 @@
+start with string n
+make list from n, reverse list
+for each character in nlist:
+	convert character to binary using ASCII table:
+		take index of character in hexalph list, add 33
+		convert that integer to binary, turn binary into a string
+		turn string into list, remove 'b' (list[0]), convert back to string
+		append to templist1
+combine templist1 into a string, padding ending 0's to make multiple of 6, then turn back to templist1
+take first 6 characters as variable w, then update templist1 to remove first 6 characters
+convert variable w to integer, convert integer to string
+append to templist2
+for each word in templist2:
+	convert to int, then -33
+	take hexalph[result], append to finlist
+convert finlist into string, return string
