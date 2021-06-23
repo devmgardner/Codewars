@@ -21,12 +21,12 @@ def hexto64(hex_string) :
     #separate inputlist into pairs (hexpair)
     while len(hexstringlist) > 2 :
         hexpair = hexstringlist[:2]
-        fhand.write(f'{hexpair} IS CURRENT PAIR OF HEX CHARACTERS')
+        fhand.write(f'{hexpair} IS CURRENT PAIR OF HEX CHARACTERS\n')
         #reverse hexpair, join into string, append to hexpairlist
         hexpair.reverse()
         hexpair = ''.join(hexpair)
         #fhand.write(f'{hexpair} is pair of hexadecimal characters to decode\n')
-        hexpairlist.append(hexpair)
+        hexpairlist.extend(hexpair)
         hexstringlist = hexstringlist[2:]
     #fhand.write(f'{hexpairlist} is the list of hexadecimal pairs after parsing\n')
     #FUNCTION HEXTODEC
@@ -34,6 +34,7 @@ def hexto64(hex_string) :
         #-pull from hextodec from hex>rgb converter, do not forget to remove reversal
         #-return the decimal form of each hex pair - 33 (for hexalph list)
         inputpair = list(inputpair.lower())
+        fhand.write(f'{inputpair} is current input pair in lowercase\n\n\n')
         total = 0
         for ind, char in enumerate(inputpair) :
             fhand.write(f'{char} is current hexadecimal character to convert\n')
@@ -44,11 +45,12 @@ def hexto64(hex_string) :
     #initialize empty list (listcharacterdecimal)
     listcharacterdecimal = []
     #for each pair in hexpairlist:
+    fhand.write(f'{hexpairlist} IS CURRENT LIST OF HEX PAIRS\n')
     for item in hexpairlist :
         #run pair through hextodec function, set to variable characterdecimal
         characterdecimal = hextodec(item)
         #append str version of characterdecimal to listcharacterdecimal
-        listcharacterdecimal.append(str(characterdecimal))
+        listcharacterdecimal.extend(str(characterdecimal))
     fhand.write(f'{listcharacterdecimal} is list of decimal numbers after being converted from hexadecimal\n')
     #use characterdecimal as index for hexalph list, append each asciicharacter to asciicharacterlist
     for item in listcharacterdecimal :

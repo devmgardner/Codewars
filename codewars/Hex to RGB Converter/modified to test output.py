@@ -11,10 +11,10 @@ def hex_string_to_RGB(hex_string):
         n.reverse()
         print(f'after split and reverse, n is {n}\n')
         for ind, char in enumerate(n) :
-            fhand.write(f'{ind},{char} is current index and character in input\n')
+            fhand.write(f'{ind}<index in input, {char}<character\n')
             fhand.write(f'{hexalph.index(char)} is index of character in hexalph list\n')
             fhand.write(f'{16 ** ind} is 16 ^ index\n')
-            fhand.write(f'{(hexalph.index(char) * (16 ** ind))} is decimal form of hexadecimal input\n\n')
+            fhand.write(f'{(hexalph.index(char) * (16 ** ind))} is index in hexalph list * 16 ^ index\n\n')
             total += (hexalph.index(char) * (16 ** ind))
         return total
     return {
