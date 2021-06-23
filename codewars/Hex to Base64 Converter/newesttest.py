@@ -12,6 +12,9 @@ fname = 'testoutput.txt'
 fhand = open(fname, 'w')
 fhand.close()
 fhand = open(fname, 'r+')
+#
+#
+#
 def hexto64(hex_string) :
     #we first need to set up a list of pairs of the original hex string
     #each pair corresponds to an ascii character
@@ -20,6 +23,9 @@ def hexto64(hex_string) :
     hexcharacterlist = []
     #the while loop below iterates through each pair of characters in the list created by the input of the overall function
     #it then adds each of these pairs to another list, to be processed later
+    #
+    #
+    #
     while len(hexstringlist) > 2 :
         starthexpair = hexstringlist[:2]
         starthexpair.reverse()
@@ -30,6 +36,9 @@ def hexto64(hex_string) :
     fhand.write(f'{hexcharacterlist} is the list of hexadecimal pairs after parsing\n')
     #now that we have a list of hex characters to process, we need to convert each one to its decimal counterpart
     #the function below converts a hexadecimal string into its decimal counterpart
+    #
+    #
+    #
     def hextodec(hexpair) :
         total = 0
         for ind, char in enumerate(hexpair) :
@@ -39,6 +48,9 @@ def hexto64(hex_string) :
     declist = []
     #the for loop below iterates through the list of hexadecimal strings and converts them to decimal
     #it then places the decimal numbers in a list to process later
+    #
+    #
+    #
     for item in hexcharacterlist :
         decimalversion = hextodec(item)
         declist.append(decimalversion)
@@ -47,6 +59,9 @@ def hexto64(hex_string) :
     #each item in declist is an ascii character's decimal counterpart
     #the for loop below iterates through and converts the decimals to ascii characters
     #it does this by subtracting 33 and comparing to the hexalph list above
+    #
+    #
+    #
     for item in declist :
         fhand.write(f'{item} is the current decimal number to convert to ASCII\n')
         hexalphindex = item - 33
@@ -58,6 +73,9 @@ def hexto64(hex_string) :
     asciistring = ''.join(characterlist)
     fhand.write(f'{asciistring} is the final ASCII string to be processed into base64\n\n\n')
     #the function below converts an ASCII string to base64
+    #
+    #
+    #
     def stringtobase64(asciistring) :
         fhand.write(f'{asciistring} is input at beginning of function\n')
         #The lines below were commented out because ASCII characters are actually case-sensitive, and as seen in the next set of comments, I misunderstood the instructions.
@@ -69,6 +87,9 @@ def hexto64(hex_string) :
         #fhand.write(f'{listofasciistringchars} is reversed list\n')
         bit8list = []
         #The for loop below processes each character.
+        #
+        #
+        #
         for character in listofasciistringchars :
             fhand.write(f'{character} is current char in n\n')
             #The line below converts the character into its decimal representation.
@@ -85,11 +106,17 @@ def hexto64(hex_string) :
         #The line below takes all of the binary representations of each ASCII character and converts them into one long string.
         bit8list = list(''.join(bit8list))
         #The loop below double-checks to make sure the string is divisible by 6, for further processing.
+        #
+        #
+        #
         for i in range(2) :
             if len(bit8list) % 6 != 0 : bit8list.append('0'); bit8list.append('0')
         fhand.write(f'{bit8list} is list of 8bit words after padding for 6 multiplicity\n')
         listof6bits = []
         #The while loop below processes every set of 6bit words in the list separately.
+        #
+        #
+        #
         while len(bit8list) > 6 :
             #The lines below pull 6 bits from the list for processing and remove those bits from the list.
             bit6word = bit8list[:6]
@@ -103,11 +130,17 @@ def hexto64(hex_string) :
         fhand.write(f'{listof6bits} is full list of 6bit words\n')
         finalcharacterlist = []
         #The loop below runs the final processing on each character.
+        #
+        #
+        #
         for word in listof6bits :
             wordinteger = int(word)
             fhand.write(f'{wordinteger} is integer form of word for asciialph index\n')
             finalcharacterlist.append(asciialph[wordinteger])
         #The for loop below ensures that the result is divisible by 4, by padding with '=' as necessary.
+        #
+        #
+        #
         for i in range(3) :
             if not len(finalcharacterlist) % 4 == 0 : finalcharacterlist.append('=')
         result = ''.join(finalcharacterlist)

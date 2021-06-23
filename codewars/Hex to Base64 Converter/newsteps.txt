@@ -1,0 +1,42 @@
+start with hex_string
+convert hex_string to list (inputlist)
+initialize empty list (hexpairlist)
+separate inputlist into pairs (hexpair)
+reverse hexpair, join into string, append to hexpairlist
+FUNCTION HEXTODEC
+-pull from hextodec from hex>rgb converter, do not forget to remove reversal
+-return the decimal form of each hex pair - 33 (for hexalph list)
+
+initialize empty list (asciicharacterlist)
+initialize empty list (listcharacterdecimal)
+for each pair in hexpairlist:
+run pair through hextodec function, set to variable characterdecimal
+append str version of characterdecimal to listcharacterdecimal
+use characterdecimal as index for hexalph list, append each asciicharacter to asciicharacterlist
+print asciicharacterlist
+
+initialize empty list (binarylist)
+for each number in listcharacterdecimal:
+turn the number into an integer again
+convert that integer to binary, the binary to a list, remove the 'b' python adds (list[1]), then join back to a string
+append string to binarylist
+
+convert binarylist into one long string
+if length of binarylist isn't divisible by 6:
+convert string into list, append 00, convert back to string, check again
+convert binarylist back into a list
+
+initialize empty list (listfinaldecimal)
+while the length of the binarylist is greater than 6:
+set sixbitword to be the first 6 characters in the list as a string
+remove first 6 characters from binarylist
+join sixbitword into a string, then get the base2 integer form of it, then convert it to a string again, then append it to listfinaldecimal
+
+initialize empty list (listfinalascii)
+for each finaldecimal in listfinaldecimal:
+convert finaldecimal to an integer
+get the finaldecimal index from the finalascii list
+append to listfinalascii
+
+join listfinalascii into one long string
+if listfinalascii isn't divisible by 4, convert it to a list, append =, convert back to string, repeat until divisible by 4
