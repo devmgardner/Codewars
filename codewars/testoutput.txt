@@ -1,0 +1,21 @@
+6afe16afbaf0e10a is the original hex-encoded string
+
+
+['6a', 'fe', '16', 'af', 'ba', 'f0', 'e1'] is the list of hexadecimal pairs after parsing
+6 is current hexadecimal character to convert
+a is current hexadecimal character to convert
+f is current hexadecimal character to convert
+e is current hexadecimal character to convert
+1 is current hexadecimal character to convert
+6 is current hexadecimal character to convert
+a is current hexadecimal character to convert
+f is current hexadecimal character to convert
+b is current hexadecimal character to convert
+a is current hexadecimal character to convert
+f is current hexadecimal character to convert
+0 is current hexadecimal character to convert
+e is current hexadecimal character to convert
+1 is current hexadecimal character to convert
+[166, 239, 97, 250, 171, 15, 30] is the list of decimal numbers after being converted from hexadecimal
+166 is the current decimal number to convert to ASCII
+133 is the index of the current decimal number - 33
