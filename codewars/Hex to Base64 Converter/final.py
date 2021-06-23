@@ -3,7 +3,7 @@
 ########https://base64.guru/converter/encode/hex;
 hexalph = """!"#$%&'()*+,-./0123456789:'<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"""
 hexdecalph = '0123456789abcdef'
-asciialph = """ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"""
+finalascii = """ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"""
 fname = 'testoutput.txt'
 fhand = open(fname, 'w')
 fhand.close()
@@ -21,13 +21,14 @@ def hexto64(hex_string) :
     #separate inputlist into pairs (hexpair)
     while len(hexstringlist) > 2 :
         hexpair = hexstringlist[:2]
+        fhand.write(f'{hexpair} IS CURRENT PAIR OF HEX CHARACTERS')
         #reverse hexpair, join into string, append to hexpairlist
         hexpair.reverse()
         hexpair = ''.join(hexpair)
-        fhand.write(f'{hexpair} is pair of hexadecimal characters to decode\n')
+        #fhand.write(f'{hexpair} is pair of hexadecimal characters to decode\n')
         hexpairlist.append(hexpair)
         hexstringlist = hexstringlist[2:]
-    fhand.write(f'{hexpairlist} is the list of hexadecimal pairs after parsing\n')
+    #fhand.write(f'{hexpairlist} is the list of hexadecimal pairs after parsing\n')
     #FUNCTION HEXTODEC
     def hextodec(inputpair) :
         #-pull from hextodec from hex>rgb converter, do not forget to remove reversal
@@ -51,7 +52,7 @@ def hexto64(hex_string) :
     fhand.write(f'{listcharacterdecimal} is list of decimal numbers after being converted from hexadecimal\n')
     #use characterdecimal as index for hexalph list, append each asciicharacter to asciicharacterlist
     for item in listcharacterdecimal :
-        asciicharacter = hexalph[item - 33]
+        asciicharacter = hexalph[int(item) - 33]
         asciicharacterlist.append(asciicharacter)
     #print asciicharacterlist
     fhand.write(f'{asciicharacterlist} is list of ASCII characters after processiong\n')
@@ -87,12 +88,24 @@ def hexto64(hex_string) :
         #remove first 6 characters from binarylist
         binarylist = binarylist[6:]
         #join sixbitword into a string, then get the base2 integer form of it, then convert it to a string again, then append it to listfinaldecimal
-        listfinaldecimal.append(str(int(str(binarylist, 2))))
+        listfinaldecimal.append(str(int(str(sixbitword), 2)))
     #initialize empty list (listfinalascii)
-    
+    listfinalascii = []
     #for each finaldecimal in listfinaldecimal:
-    #convert finaldecimal to an integer
-    #get the finaldecimal index from the finalascii list
-    #append to listfinalascii
+    for finaldec in listfinaldecimal :
+        #convert finaldecimal to an integer
+        finaldec = int(finaldec)
+        #get the finaldecimal index from the finalascii list
+        finalchar = finalascii[finaldec]
+        #append to listfinalascii
+        listfinalascii.append(finalchar)
     #join listfinalascii into one long string
+    result = ''.join(listfinalascii)
     #if listfinalascii isn't divisible by 4, convert it to a list, append =, convert back to string, repeat until divisible by 4
+    for i in range(3) :
+        if len(result) % 4 != 0 :
+            result = list(result)
+            result.append('=')
+            result = ''.join(result)
+    return result
+print(hexto64(input('')))
