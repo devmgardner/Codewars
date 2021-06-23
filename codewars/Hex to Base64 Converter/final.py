@@ -2,7 +2,7 @@
 #SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t
 ########https://base64.guru/converter/encode/hex;
 hexalph = """!"#$%&'()*+,-./0123456789:'<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"""
-hexdecalph = '0123456789abcdef'
+hexdecalph = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
 finalascii = """ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"""
 fname = 'testoutput.txt'
 fhand = open(fname, 'w')
@@ -19,14 +19,14 @@ def hexto64(hex_string) :
     #initialize empty list (hexpairlist)
     hexpairlist = []
     #separate inputlist into pairs (hexpair)
-    while len(hexstringlist) > 2 :
+    while len(hexstringlist) >= 2 :
         hexpair = hexstringlist[:2]
         fhand.write(f'{hexpair} IS CURRENT PAIR OF HEX CHARACTERS\n')
         #reverse hexpair, join into string, append to hexpairlist
         hexpair.reverse()
         hexpair = ''.join(hexpair)
         #fhand.write(f'{hexpair} is pair of hexadecimal characters to decode\n')
-        hexpairlist.extend(hexpair)
+        hexpairlist.append(hexpair)
         hexstringlist = hexstringlist[2:]
     #fhand.write(f'{hexpairlist} is the list of hexadecimal pairs after parsing\n')
     #FUNCTION HEXTODEC
@@ -38,7 +38,7 @@ def hexto64(hex_string) :
         total = 0
         for ind, char in enumerate(inputpair) :
             fhand.write(f'{char} is current hexadecimal character to convert\n')
-            total += (hexalph.index(char) * (16 ** ind))
+            total += (hexdecalph.index(char) + (16 ** ind))
         return total
     #initialize empty list (asciicharacterlist)
     asciicharacterlist = []
@@ -50,7 +50,7 @@ def hexto64(hex_string) :
         #run pair through hextodec function, set to variable characterdecimal
         characterdecimal = hextodec(item)
         #append str version of characterdecimal to listcharacterdecimal
-        listcharacterdecimal.extend(str(characterdecimal))
+        listcharacterdecimal.append(str(characterdecimal))
     fhand.write(f'{listcharacterdecimal} is list of decimal numbers after being converted from hexadecimal\n')
     #use characterdecimal as index for hexalph list, append each asciicharacter to asciicharacterlist
     for item in listcharacterdecimal :
@@ -84,11 +84,12 @@ def hexto64(hex_string) :
     #initialize empty list (listfinaldecimal)
     listfinaldecimal = []
     #while the length of the binarylist is greater than 6:
-    while len(binarylist) > 6 :
+    while len(binarylist) >= 6 :
         #set sixbitword to be the first 6 characters in the list as a string
         sixbitword = binarylist[:6]
         #remove first 6 characters from binarylist
         binarylist = binarylist[6:]
+        sixbitword = ''.join(sixbitword)
         #join sixbitword into a string, then get the base2 integer form of it, then convert it to a string again, then append it to listfinaldecimal
         listfinaldecimal.append(str(int(str(sixbitword), 2)))
     #initialize empty list (listfinalascii)
