@@ -4,7 +4,7 @@
 hexalph = """!"#$%&'()*+,-./0123456789:'<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"""
 hexdecalph = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
 finalascii = """ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"""
-fname = 'testoutput.txt'
+fname = 'NEWtestoutput.txt'
 fhand = open(fname, 'w')
 fhand.close()
 fhand = open(fname, 'r+')
@@ -72,15 +72,21 @@ def hexto64(hex_string) :
         binarylist.append(binaryint)
     #convert binarylist into one long string
     binarylist = ''.join(binarylist)
-    for i in range(2) :
-        #if length of binarylist isn't divisible by 6:
-        if not len(binarylist) % 6 == 0 :
-            #convert string into list, append 00, convert back to string, check again
-            binarylist = list(binarylist)
-            binarylist.append('00')
-            binarylist = ''.join(binarylist)
+    fhand.write(f'{binarylist} is binary of words\n')
+    #if length of binarylist isn't divisible by 6:
+    if not len(binarylist) % 6 == 0 :
+        #convert string into list, append 00, convert back to string, check again
+        binarylist = list(binarylist)
+        binarylist.append('00')
+        binarylist = ''.join(binarylist)
+    if not len(binarylist) % 6 == 0 :
+        #convert string into list, append 00, convert back to string, check again
+        binarylist = list(binarylist)
+        binarylist.append('00')
+        binarylist = ''.join(binarylist)
     #convert binarylist back into a list
     binarylist = list(binarylist)
+    fhand.write(f'{binarylist} is binarylist after padding if necessary\n')
     #initialize empty list (listfinaldecimal)
     listfinaldecimal = []
     #while the length of the binarylist is greater than 6:
@@ -90,10 +96,15 @@ def hexto64(hex_string) :
         #remove first 6 characters from binarylist
         binarylist = binarylist[6:]
         sixbitword = ''.join(sixbitword)
+        fhand.write(f'{sixbitword} is current 6bit word\n')
         #join sixbitword into a string, then get the base2 integer form of it, then convert it to a string again, then append it to listfinaldecimal
-        listfinaldecimal.append(str(int(str(sixbitword), 2)))
+        sixbitword = int(sixbitword, 2)
+        fhand.write(f'{sixbitword} is base2 integer of sixbitword\n')
+        sixbitword = str(sixbitword)
+        listfinaldecimal.append(sixbitword)
     #initialize empty list (listfinalascii)
     listfinalascii = []
+    fhand.write(f'{listfinaldecimal} is list of final decimal numbers for ASCII conversion\n')
     #for each finaldecimal in listfinaldecimal:
     for finaldec in listfinaldecimal :
         #convert finaldecimal to an integer
