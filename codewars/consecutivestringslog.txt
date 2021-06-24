@@ -1,0 +1,119 @@
+strarr input is ['t', 'r', 'e', 'e', ',', ' ', 'f', 'o', 'l', 'i', 'n', 'g', ',', ' ', 't', 'r', 'a', 's', 'h', 'y', ',', ' ', 'b', 'l', 'u', 'e', ',', ' ', 'a', 'b', 'c', 'd', 'e', 'f', ',', ' ', 'u', 'v', 'w', 'x', 'y', 'z']
+item is t
+item is r
+item is e
+item is e
+item is ,
+item is  
+item is f
+item is o
+item is l
+item is i
+item is n
+item is g
+item is ,
+item is  
+item is t
+item is r
+item is a
+item is s
+item is h
+item is y
+item is ,
+item is  
+item is b
+item is l
+item is u
+item is e
+item is ,
+item is  
+item is a
+item is b
+item is c
+item is d
+item is e
+item is f
+item is ,
+item is  
+item is u
+item is v
+item is w
+item is x
+item is y
+item is z
+strarrstr after join with space delimiter is t r e e ,   f o l i n g ,   t r a s h y ,   b l u e ,   a b c d e f ,   u v w x y z
+words list is ['t', 'r', 'e', 'e', ',', 'f', 'o', 'l', 'i', 'n', 'g', ',', 't', 'r', 'a', 's', 'h', 'y', ',', 'b', 'l', 'u', 'e', ',', 'a', 'b', 'c', 'd', 'e', 'f', ',', 'u', 'v', 'w', 'x', 'y', 'z']
+list of iterators is: 0, 1, 
+['t', 'r'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['r', 'e'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['e', 'e'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['e', ','] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+[',', 'f'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['f', 'o'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['o', 'l'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['l', 'i'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['i', 'n'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['n', 'g'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['g', ','] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+[',', 't'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['t', 'r'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['r', 'a'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['a', 's'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['s', 'h'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['h', 'y'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['y', ','] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+[',', 'b'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['b', 'l'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['l', 'u'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['u', 'e'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['e', ','] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+[',', 'a'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['a', 'b'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['b', 'c'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['c', 'd'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['d', 'e'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['e', 'f'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['f', ','] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+[',', 'u'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['u', 'v'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['v', 'w'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['w', 'x'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['x', 'y'] is list of words, 2 is the total count of characters
+list of iterators is: 0, 1, 
+['y', 'z'] is list of words, 2 is the total count of characters
+[(36, ['y', 'z'], 2), (35, ['x', 'y'], 2), (34, ['w', 'x'], 2), (33, ['v', 'w'], 2), (32, ['u', 'v'], 2), (31, [',', 'u'], 2), (30, ['f', ','], 2), (29, ['e', 'f'], 2), (28, ['d', 'e'], 2), (27, ['c', 'd'], 2), (26, ['b', 'c'], 2), (25, ['a', 'b'], 2), (24, [',', 'a'], 2), (23, ['e', ','], 2), (22, ['u', 'e'], 2), (21, ['l', 'u'], 2), (20, ['b', 'l'], 2), (19, [',', 'b'], 2), (18, ['y', ','], 2), (17, ['h', 'y'], 2), (16, ['s', 'h'], 2), (15, ['a', 's'], 2), (14, ['r', 'a'], 2), (13, ['t', 'r'], 2), (12, [',', 't'], 2), (11, ['g', ','], 2), (10, ['n', 'g'], 2), (9, ['i', 'n'], 2), (8, ['l', 'i'], 2), (7, ['o', 'l'], 2), (6, ['f', 'o'], 2), (5, [',', 'f'], 2), (4, ['e', ','], 2), (3, ['e', 'e'], 2), (2, ['r', 'e'], 2), (1, ['t', 'r'], 2)] is final list containing an index, the list of words starting at index-1, and the total number of characters in that list, sorted first by count and then by index
+[(1, ['t', 'r'], 2), (2, ['r', 'e'], 2), (3, ['e', 'e'], 2), (4, ['e', ','], 2), (5, [',', 'f'], 2), (6, ['f', 'o'], 2), (7, ['o', 'l'], 2), (8, ['l', 'i'], 2), (9, ['i', 'n'], 2), (10, ['n', 'g'], 2), (11, ['g', ','], 2), (12, [',', 't'], 2), (13, ['t', 'r'], 2), (14, ['r', 'a'], 2), (15, ['a', 's'], 2), (16, ['s', 'h'], 2), (17, ['h', 'y'], 2), (18, ['y', ','], 2), (19, [',', 'b'], 2), (20, ['b', 'l'], 2), (21, ['l', 'u'], 2), (22, ['u', 'e'], 2), (23, ['e', ','], 2), (24, [',', 'a'], 2), (25, ['a', 'b'], 2), (26, ['b', 'c'], 2), (27, ['c', 'd'], 2), (28, ['d', 'e'], 2), (29, ['e', 'f'], 2), (30, ['f', ','], 2), (31, [',', 'u'], 2), (32, ['u', 'v'], 2), (33, ['v', 'w'], 2), (34, ['w', 'x'], 2), (35, ['x', 'y'], 2), (36, ['y', 'z'], 2)] is final list of strings with the maximum amount of characters, sorted by the order in which they appear in the original input
