@@ -1,0 +1,21 @@
+sequence is 01001100100
+match is 0 with length of 1
+removal of match results in 1001100100
+actual number is 10
+remaining sequence after removal of number is 01100100
+match is 0 with length of 1
+removal of match results in 1100100
+actual number is 11
+remaining sequence after removal of number is 00100
+match is 00 with length of 2
+removal of match results in 100
+actual number is 100
+remaining sequence after removal of number is 
+final list of matches is ['10', '11', '100']
+conversion of number is 2
+number - 1 = 1
+conversion of number is 3
+number - 1 = 2
+conversion of number is 4
+number - 1 = 3
+final decode is [1, 2, 3]
