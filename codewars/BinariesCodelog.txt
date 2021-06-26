@@ -1,0 +1,125 @@
+chars in strng are: 9, 1, 8, 4, 5, 7, 9, 2, 3, 4, 8, 7, 5, 2, 9, 3, 4, 8, 7, 5, 2, 3, 4, 6, 
+list of bin of int of chars in strng is:
+['0b1001', '0b1', '0b1000', '0b100', '0b101', '0b111', '0b1001', '0b10', '0b11', '0b100', '0b1000', '0b111', '0b101', '0b10', '0b1001', '0b11', '0b100', '0b1000', '0b111', '0b101', '0b10', '0b11', '0b100', '0b110']
+list of chars with 0b removed is:
+['1001', '1', '1000', '100', '101', '111', '1001', '10', '11', '100', '1000', '111', '101', '10', '1001', '11', '100', '1000', '111', '101', '10', '11', '100', '110']
+(len of 1001) - 1 is 3
+1001 with leading 1 added is 11001
+(len of bin form of char) is > 1, adding leading 0 to turn 11001 into 011001
+(len of bin form of char) is > 1, adding leading 0 to turn 011001 into 0011001
+(len of bin form of char) is > 1, adding leading 0 to turn 0011001 into 00011001
+CURRENT OUTPUT LIST IS ['00011001']
+(len of 1) - 1 is 0
+1 with leading 1 added is 11
+CURRENT OUTPUT LIST IS ['00011001', '11']
+(len of 1000) - 1 is 3
+1000 with leading 1 added is 11000
+(len of bin form of char) is > 1, adding leading 0 to turn 11000 into 011000
+(len of bin form of char) is > 1, adding leading 0 to turn 011000 into 0011000
+(len of bin form of char) is > 1, adding leading 0 to turn 0011000 into 00011000
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000']
+(len of 100) - 1 is 2
+100 with leading 1 added is 1100
+(len of bin form of char) is > 1, adding leading 0 to turn 1100 into 01100
+(len of bin form of char) is > 1, adding leading 0 to turn 01100 into 001100
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100']
+(len of 101) - 1 is 2
+101 with leading 1 added is 1101
+(len of bin form of char) is > 1, adding leading 0 to turn 1101 into 01101
+(len of bin form of char) is > 1, adding leading 0 to turn 01101 into 001101
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101']
+(len of 111) - 1 is 2
+111 with leading 1 added is 1111
+(len of bin form of char) is > 1, adding leading 0 to turn 1111 into 01111
+(len of bin form of char) is > 1, adding leading 0 to turn 01111 into 001111
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111']
+(len of 1001) - 1 is 3
+1001 with leading 1 added is 11001
+(len of bin form of char) is > 1, adding leading 0 to turn 11001 into 011001
+(len of bin form of char) is > 1, adding leading 0 to turn 011001 into 0011001
+(len of bin form of char) is > 1, adding leading 0 to turn 0011001 into 00011001
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001']
+(len of 10) - 1 is 1
+10 with leading 1 added is 110
+(len of bin form of char) is > 1, adding leading 0 to turn 110 into 0110
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110']
+(len of 11) - 1 is 1
+11 with leading 1 added is 111
+(len of bin form of char) is > 1, adding leading 0 to turn 111 into 0111
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111']
+(len of 100) - 1 is 2
+100 with leading 1 added is 1100
+(len of bin form of char) is > 1, adding leading 0 to turn 1100 into 01100
+(len of bin form of char) is > 1, adding leading 0 to turn 01100 into 001100
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100']
+(len of 1000) - 1 is 3
+1000 with leading 1 added is 11000
+(len of bin form of char) is > 1, adding leading 0 to turn 11000 into 011000
+(len of bin form of char) is > 1, adding leading 0 to turn 011000 into 0011000
+(len of bin form of char) is > 1, adding leading 0 to turn 0011000 into 00011000
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000']
+(len of 111) - 1 is 2
+111 with leading 1 added is 1111
+(len of bin form of char) is > 1, adding leading 0 to turn 1111 into 01111
+(len of bin form of char) is > 1, adding leading 0 to turn 01111 into 001111
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111']
+(len of 101) - 1 is 2
+101 with leading 1 added is 1101
+(len of bin form of char) is > 1, adding leading 0 to turn 1101 into 01101
+(len of bin form of char) is > 1, adding leading 0 to turn 01101 into 001101
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101']
+(len of 10) - 1 is 1
+10 with leading 1 added is 110
+(len of bin form of char) is > 1, adding leading 0 to turn 110 into 0110
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110']
+(len of 1001) - 1 is 3
+1001 with leading 1 added is 11001
+(len of bin form of char) is > 1, adding leading 0 to turn 11001 into 011001
+(len of bin form of char) is > 1, adding leading 0 to turn 011001 into 0011001
+(len of bin form of char) is > 1, adding leading 0 to turn 0011001 into 00011001
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001']
+(len of 11) - 1 is 1
+11 with leading 1 added is 111
+(len of bin form of char) is > 1, adding leading 0 to turn 111 into 0111
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111']
+(len of 100) - 1 is 2
+100 with leading 1 added is 1100
+(len of bin form of char) is > 1, adding leading 0 to turn 1100 into 01100
+(len of bin form of char) is > 1, adding leading 0 to turn 01100 into 001100
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100']
+(len of 1000) - 1 is 3
+1000 with leading 1 added is 11000
+(len of bin form of char) is > 1, adding leading 0 to turn 11000 into 011000
+(len of bin form of char) is > 1, adding leading 0 to turn 011000 into 0011000
+(len of bin form of char) is > 1, adding leading 0 to turn 0011000 into 00011000
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000']
+(len of 111) - 1 is 2
+111 with leading 1 added is 1111
+(len of bin form of char) is > 1, adding leading 0 to turn 1111 into 01111
+(len of bin form of char) is > 1, adding leading 0 to turn 01111 into 001111
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000', '001111']
+(len of 101) - 1 is 2
+101 with leading 1 added is 1101
+(len of bin form of char) is > 1, adding leading 0 to turn 1101 into 01101
+(len of bin form of char) is > 1, adding leading 0 to turn 01101 into 001101
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000', '001111', '001101']
+(len of 10) - 1 is 1
+10 with leading 1 added is 110
+(len of bin form of char) is > 1, adding leading 0 to turn 110 into 0110
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000', '001111', '001101', '0110']
+(len of 11) - 1 is 1
+11 with leading 1 added is 111
+(len of bin form of char) is > 1, adding leading 0 to turn 111 into 0111
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000', '001111', '001101', '0110', '0111']
+(len of 100) - 1 is 2
+100 with leading 1 added is 1100
+(len of bin form of char) is > 1, adding leading 0 to turn 1100 into 01100
+(len of bin form of char) is > 1, adding leading 0 to turn 01100 into 001100
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000', '001111', '001101', '0110', '0111', '001100']
+(len of 110) - 1 is 2
+110 with leading 1 added is 1110
+(len of bin form of char) is > 1, adding leading 0 to turn 1110 into 01110
+(len of bin form of char) is > 1, adding leading 0 to turn 01110 into 001110
+CURRENT OUTPUT LIST IS ['00011001', '11', '00011000', '001100', '001101', '001111', '00011001', '0110', '0111', '001100', '00011000', '001111', '001101', '0110', '00011001', '0111', '001100', '00011000', '001111', '001101', '0110', '0111', '001100', '001110']
+FINAL OUTPUT IS 00011001110001100000110000110100111100011001011001110011000001100000111100110101100001100101110011000001100000111100110101100111001100001110
+#######
