@@ -1,0 +1,1 @@
+def alphabet_position(text): return ' '.join([str('abcdefghijklmnopqrstuvwxyz'.find(char) + 1) for word in text.lower().split() for char in word if char in 'abcdefghijklmnopqrstuvwxyz'])
