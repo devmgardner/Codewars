@@ -17,7 +17,6 @@ def solution(roman) :
         'CD' : 400,
         'CM' : 900
     }
-    res = [nums[item] if not nums]
     result = 0
     newl = list(roman)
     for (ind, item) in enumerate(newl) :
