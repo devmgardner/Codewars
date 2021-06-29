@@ -1,0 +1,27 @@
+starting value of num is 3240
+n in valid is 1000
+current num is 3240
+quotient is 3, remainder is 240. new num is 240
+appending M
+appending M
+appending M
+n in valid is 900
+n in valid is 500
+n in valid is 400
+n in valid is 100
+current num is 240
+quotient is 2, remainder is 40. new num is 40
+appending C
+appending C
+n in valid is 90
+n in valid is 50
+n in valid is 40
+current num is 40
+quotient is 1, remainder is 0. new num is 0
+appending XL
+n in valid is 10
+n in valid is 9
+n in valid is 5
+n in valid is 4
+n in valid is 1
+final result is MMMCCXL

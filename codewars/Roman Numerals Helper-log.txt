@@ -1,0 +1,23 @@
+starting value of self is 1990
+n in valid is 1000
+current self is 1990
+quotient is 1, remainder is 990. new self is 990
+appending M
+n in valid is 900
+current self is 990
+quotient is 1, remainder is 90. new self is 90
+appending CM
+n in valid is 500
+n in valid is 400
+n in valid is 100
+n in valid is 90
+current self is 90
+quotient is 1, remainder is 0. new self is 0
+appending XC
+n in valid is 50
+n in valid is 40
+n in valid is 10
+n in valid is 9
+n in valid is 5
+n in valid is 4
+n in valid is 1
