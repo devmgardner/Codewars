@@ -11,8 +11,25 @@ def format_duration(seconds):
     hours, remainder = divmod(remainder, 3600)
     minutes, remainder = divmod(remainder, 60)
     final, secs = divmod(remainder, 60)
-    if secs == 1: seconds=f'{seconds} second'
-
+    if secs > 0: ssecs=f'{seconds} second'
+    else:secs=None
+    if minutes > 0: sminutes=f'{minutes} minute'
+    else:minutes=None
+    if hours > 0: shours=f'{hours} hour'
+    else:hours=None
+    if days > 0: sdays=f'{days} day'
+    else:days=None
+    if years > 0: syears=f'{years} year'
+    else:years=None
+    comp = {
+        ssecs:secs,
+        sminutes:minutes,
+        shours:hours,
+        sdays:days,
+        syears:years
+    }
+    list = [syears, sdays, shours, sminutes, ssecs]
+    list = [i + 's' if comp.get(i) > 1 and not i is None else i if comp.get(i) == 1]
 
 
 
