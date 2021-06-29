@@ -11,16 +11,16 @@ def format_duration(seconds):
     hours, remainder = divmod(remainder, 3600)
     minutes, remainder = divmod(remainder, 60)
     final, secs = divmod(remainder, 60)
-    if secs > 0: ssecs=f'{seconds} second'
-    else:secs=None
+    if secs > 0: ssecs=f'{secs} second'
+    else:ssecs=None
     if minutes > 0: sminutes=f'{minutes} minute'
-    else:minutes=None
+    else:sminutes=None
     if hours > 0: shours=f'{hours} hour'
-    else:hours=None
+    else:shours=None
     if days > 0: sdays=f'{days} day'
-    else:days=None
+    else:sdays=None
     if years > 0: syears=f'{years} year'
-    else:years=None
+    else:syears=None
     comp = {
         ssecs:secs,
         sminutes:minutes,
@@ -29,34 +29,42 @@ def format_duration(seconds):
         syears:years
     }
     list = [syears, sdays, shours, sminutes, ssecs]
-    list = [i + 's' if comp.get(i) > 1 and not i is None else i if comp.get(i) == 1]
-
-
-
-
-    if not years > 0 and not days > 0 and not hours > 0 and not minutes > 0 and secs == 1: return f'{seconds} second'
-    elif not years > 0 and not days > 0 and not hours > 0 and not minutes > 0 and secs > 0: return f'{seconds} seconds'
-    elif years == 1: years=f'{years} year, '
-    elif years > 0: years=f'{years} years, '
-    #
-    if days == 1: days=f'{days} day, '
-    elif days > 0: days=f'{days} days, '
-    #
-    if hours == 1 and minutes > 0 or hours == 1 and secs > 0: hours=f'{hours} hour, '
-    elif hours == 1 and not minutes > 0 and not secs > 0: hours=f'{hours} hour'
-    elif hours > 0 and minutes > 0 or hours > 0 and secs > 0:hours=f'{hours} hours, '
-    elif hours > 0 and not minutes > 0 and not secs > 0:hours=f'{hours} hours'
-    #
-    if minutes == 1 and secs > 0:minutes=f'{minutes} minute and {secs} seconds'
-    elif minutes == 1 and secs == 1:minutes=f'{minutes} minute and {secs} second'
-    elif minutes == 1 and not secs > 0:minutes=f'and {minutes} minute'
-    elif minutes > 0 and secs == 1: minutes=f'{minutes} minutes and {secs} second'
-    elif minutes > 0 and secs > 0:minutes=f'{minutes} minutes and {secs} seconds'
-    elif minutes > 0 and not secs > 0:minutes=f'and {minutes} minutes'
-    elif not minutes > 0 and secs == 1:minutes=f'and {secs} second'
-    elif not minutes > 0 and secs > 0:minutes=f'and {secs} seconds'
-    result = [years, days, hours, minutes]
-    return ''.join([i for i in result if not isinstance(i, int)])
+    result = []
+    for i in list:
+        if comp.get(i) > 1: result.append(str(i) + 's')
+        elif comp.get(i) == 1: result.append(str(i))
+        elif comp.get(i) is None: continue
+    if len(result) > 1:result[-2]+=' and '
+    if len(result) == 5:
+        for i in range(3):result[i]+= ', '
+    if len(result) == 4:
+        for i in range(2):result[i]+= ', '
+    elif len(result) == 3:
+        result[0] += ', '
+    return ''.join(result)
+    #if not years > 0 and not days > 0 and not hours > 0 and not minutes > 0 and secs == 1: return f'{seconds} second'
+    #elif not years > 0 and not days > 0 and not hours > 0 and not minutes > 0 and secs > 0: return f'{seconds} seconds'
+    #elif years == 1: years=f'{years} year, '
+    #elif years > 0: years=f'{years} years, '
+    ##
+    #if days == 1: days=f'{days} day, '
+    #elif days > 0: days=f'{days} days, '
+    ##
+    #if hours == 1 and minutes > 0 or hours == 1 and secs > 0: hours=f'{hours} hour, '
+    #elif hours == 1 and not minutes > 0 and not secs > 0: hours=f'{hours} hour'
+    #elif hours > 0 and minutes > 0 or hours > 0 and secs > 0:hours=f'{hours} hours, '
+    #elif hours > 0 and not minutes > 0 and not secs > 0:hours=f'{hours} hours'
+    ##
+    #if minutes == 1 and secs > 0:minutes=f'{minutes} minute and {secs} seconds'
+    #elif minutes == 1 and secs == 1:minutes=f'{minutes} minute and {secs} second'
+    #elif minutes == 1 and not secs > 0:minutes=f'and {minutes} minute'
+    #elif minutes > 0 and secs == 1: minutes=f'{minutes} minutes and {secs} second'
+    #elif minutes > 0 and secs > 0:minutes=f'{minutes} minutes and {secs} seconds'
+    #elif minutes > 0 and not secs > 0:minutes=f'and {minutes} minutes'
+    #elif not minutes > 0 and secs == 1:minutes=f'and {secs} second'
+    #elif not minutes > 0 and secs > 0:minutes=f'and {secs} seconds'
+    #result = [years, days, hours, minutes]
+    #return ''.join([i for i in result if not isinstance(i, int)])
     #if seconds >= 31536000:
     #    years, remainder = divmod(seconds, 31536000)
     #    if remainder >= 86400:
