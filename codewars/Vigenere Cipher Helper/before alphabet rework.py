@@ -10,7 +10,6 @@ class VigenereCipher(object):
         print(f'line 10 - self.key is {self.key}')
         self.alphabet = alphabet
         print(f'line 12 - self.alphabet is {self.alphabet}')
-        self.finalalphtable = [self.alphabet[i:] + self.alphabet[:i] for i in range(len(self.alphabet))]
         self.key = ''.join([i for i in self.key])
         print(f'line 14 - self.key after i.upper() list comp is {self.key}')
     

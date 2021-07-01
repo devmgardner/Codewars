@@ -4,7 +4,7 @@ tableL = [[['a'],['b'],['c'],['d'],['e'],['f'],['g'],['h'],['i'],['j'],['k'],['l
 indU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 indL = 'abcdefghijklmnopqrstuvwxyz'
 keyphrase = []
-key = input('enter key')
+key = input('enter key> ')
 key = ''.join([i for i in key])
 def encode(text):
     keyphrase = [i for i in key]
@@ -17,12 +17,12 @@ def encode(text):
     lendiff = len(keyphrase) - len(text)
     if lendiff > 0 : keyphrase = keyphrase[:-lendiff]
     keyphrase = [indU.index(i) if i in indU else indL.index(i) for i in keyphrase]
-    for t,k in zip(text, keyphrase):
-        if t in indU:
-            print(tableU[indU.index(t)])
-        elif t in indL:
-            print(tableL[indL.index(t)])
+    #for t,k in zip(text, keyphrase):
+    #    if t in indU:
+    #        print(tableU[indU.index(t)])
+    #    elif t in indL:
+    #        print(tableL[indL.index(t)])
     result = list(itertools.chain(*[tableU[k][indU.index(t)] if t in indU else tableL[k][indL.index(t)] for t,k in zip(text, keyphrase)]))
     result = ''.join(result)
     return result
-print(encode(input('enter text to encode')))
+print(encode(input('enter text to encode> ')))
