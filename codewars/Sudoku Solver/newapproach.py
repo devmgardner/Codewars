@@ -1,4 +1,5 @@
 import itertools
+import numpy as np
 fname = 'sudoku-working-log.txt'
 fhand = open(fname, 'w')
 fhand.close()
@@ -14,14 +15,20 @@ def valid_solution(board):
 
 def sudoku(puzzle):
     puzzle = puzzle.split()
-    temp = []
-    for word in puzzle:
-        newtemp = []
-        for char in word:
-            newtemp.append(int(char))
-        temp.append(newtemp)
-    puzzle = temp
-    fhand.write(f'input is {puzzle}\n')
+    #x = np.empty((9,9,2), dtype=object)
+    counter = itertools.count(0)
+    lcount = 0
+    temp=[]
+    for w in puzzle:
+        wlist = []
+        fhand.write(f'{wlist}\n')
+        fhand.write(f'{np.array(wlist)}\n')
+        for char in w:
+            wlist.append( (char, next(counter)) )
+        temp.append(wlist)
+    x = np.array(temp)
+    fhand.write(f'output of new func is {x}\n')
+    fhand.write(f'test is {x[7][8]}\n')
     """return the solved puzzle as a 2d array of 9 x 9"""
     #replace all 0s with any validnum not already in row
     for row in puzzle:
@@ -41,6 +48,7 @@ def sudoku(puzzle):
 
     gs=[[x for r in puzzle[:3] for x in r[:3]], [x for r in puzzle[3:6] for x in r[:3]], [x for r in puzzle[6:9] for x in r[:3]], [x for r in puzzle[:3] for x in r[3:6]], [x for r in puzzle[3:6] for x in r[3:6]], [x for r in puzzle[6:9] for x in r[3:6]], [x for r in puzzle[:3] for x in r[6:9]], [x for r in puzzle[3:6] for x in r[6:9]], [x for r in puzzle[6:9] for x in r[6:9]]]
     cs=[[r[i] for r in n] for i in range(9)]
+    #for validnum in validnums:
 
 
 
