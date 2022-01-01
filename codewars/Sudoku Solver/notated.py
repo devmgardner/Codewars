@@ -46,7 +46,7 @@ def solveSudoku(grid, i=0, j=0):
                 if isValid(grid,i,j,e):
                         grid[i][j] = e
                         if solveSudoku(grid, i, j):
-                                return True
+                                return grid,True
                         # Undo the current cell for backtracking
                         grid[i][j] = 0
         return False
