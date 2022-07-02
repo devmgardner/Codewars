@@ -41,7 +41,16 @@ def decode(s, n):
         matrix[ind][len(s)-1] = char
     for ind,char in enumerate(sorted(list(s))):
         matrix[ind][0] = char
-    matrix[4] = list('bananabar')
+    print(f'initial matrix during decode is:')
+    for i in matrix:
+        print(i)
+    first_col = [row[0] for row in matrix]
+    last_col = [row[-1] for row in matrix]
+    zip_list = list(zip(last_col,first_col))
+    for row in matrix:
+        matrix[matrix.index(row)] = row[-1:] + row[:-1]
+    #matrix[4] = list('bananabar')
+    print(f'matrix after shifting characters is:')
     for i in matrix:
         print(i)
 
